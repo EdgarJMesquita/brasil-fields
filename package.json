@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -52,7 +52,7 @@
     "tslib": "^2.6.3",
     "typescript": "^5.5.3"
   },
-  "description": "![Brasil Fields](./brasil-fields.svg)",
+  "description": "O jeito mais fácil de utilizar padrões e formatos brasileiros em seu projeto.",
   "directories": {
     "test": "test"
   },
