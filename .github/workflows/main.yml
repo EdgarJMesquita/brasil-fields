@@ -14,10 +14,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Use Node ${{ matrix.node }}
+      - if: runner.os != 'macOS'
+        name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
+      
+      - if: runner.os == 'macOS'
+        run: |
+          brew install nvm
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+          [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && \. "/usr/local/opt/nvm/etc/bash_completion"
+          nvm use ${{ matrix.node }}
+
 
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1
