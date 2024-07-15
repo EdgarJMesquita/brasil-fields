@@ -19,6 +19,12 @@ describe('formatters', () => {
     })('123456789101112');
   });
 
+  it('cpfOrCnpjInputFormatter cpf', () => {
+    Formatter.cpfOrCnpjInputFormatter(value => {
+      expect(value).toBe('098.351.022-0');
+    })('0983510220');
+  });
+
   it('cpfInputFormatter cpf', () => {
     Formatter.cpfOrCnpjInputFormatter(value => {
       expect(value).toBe('123.456.789-10');

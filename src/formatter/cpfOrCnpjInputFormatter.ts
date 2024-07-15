@@ -10,7 +10,7 @@ export function cpfOrCnpjInputFormatter(callback: (value: string) => void) {
       const digitsOnly = handledValue.replace(/\D/g, '');
 
       const maskedValue = mask(digitsOnly, {
-        mask: handledValue.length <= 11 ? MaskType.CPF : MaskType.CNPJ,
+        mask: digitsOnly.length <= 11 ? MaskType.CPF : MaskType.CNPJ,
         digitsOnly: true,
       });
       callback(maskedValue);
