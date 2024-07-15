@@ -2,9 +2,23 @@
 
 ![Brasil Fields](./brasil-fields.svg)
 
-Inspirado no [brasil_fields flutter](https://github.com/flutterbootcamp/brasil_fields)
+Inspirado no [brasil_fields](https://github.com/flutterbootcamp/brasil_fields)
 
 O jeito mais fácil de utilizar padrões e formatos brasileiros em seu projeto.
+
+## Instalação
+
+npm
+
+```bash
+npm install brasil-fields
+```
+
+yarn
+
+```bash
+yarn add brasil-fields
+```
 
 ## Apresentação
 
