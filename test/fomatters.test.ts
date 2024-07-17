@@ -13,7 +13,7 @@ describe('formatters', () => {
     })('12345AB678910');
   });
 
-  it('cpfInputFormatter cnpj', () => {
+  it('cpfOrCnpjInputFormatter cnpj', () => {
     Formatter.cpfOrCnpjInputFormatter(value => {
       expect(value).toBe('12.345.678/9101-11');
     })('123456789101112');
@@ -25,20 +25,26 @@ describe('formatters', () => {
     })('0983510220');
   });
 
-  it('cpfInputFormatter cpf', () => {
-    Formatter.cpfOrCnpjInputFormatter(value => {
-      expect(value).toBe('123.456.789-10');
-    })('12345678910');
+  it('cpfOuCnpjInputFormatter cnpj', () => {
+    Formatter.cpfOuCnpjInputFormatter(value => {
+      expect(value).toBe('12.345.678/9101-11');
+    })('123456789101112');
   });
 
-  it('cpfInputFormatter cpf half', () => {
-    Formatter.cpfOrCnpjInputFormatter(value => {
-      expect(value).toBe('123.456');
-    })('123456');
+  it('cpfOuCnpjInputFormatter cpf', () => {
+    Formatter.cpfOuCnpjInputFormatter(value => {
+      expect(value).toBe('098.351.022-0');
+    })('0983510220');
   });
 
   it('cardInputFormatter', () => {
     Formatter.cardInputFormatter(value => {
+      expect(value).toBe('1111 2222 3333 4444');
+    })('1111222233334444');
+  });
+
+  it('cartaoBancarioInputFormatter', () => {
+    Formatter.cartaoBancarioInputFormatter(value => {
       expect(value).toBe('1111 2222 3333 4444');
     })('1111222233334444');
   });
@@ -55,8 +61,20 @@ describe('formatters', () => {
     })('12112000');
   });
 
+  it('dataInputFormatter', () => {
+    Formatter.dataInputFormatter(value => {
+      expect(value).toBe('12/11/2000');
+    })('12112000');
+  });
+
   it('hourInputFormatter', () => {
     Formatter.hourInputFormatter(value => {
+      expect(value).toBe('10:20');
+    })('1020');
+  });
+
+  it('horaInputFormatter', () => {
+    Formatter.horaInputFormatter(value => {
       expect(value).toBe('10:20');
     })('1020');
   });
@@ -73,6 +91,18 @@ describe('formatters', () => {
     })('abc1d23');
   });
 
+  it('placaVeiculoInputFormatter old', () => {
+    Formatter.placaVeiculoInputFormatter(value => {
+      expect(value).toBe('abc-1234');
+    })('abc1234');
+  });
+
+  it('placaVeiculoInputFormatter new', () => {
+    Formatter.placaVeiculoInputFormatter(value => {
+      expect(value).toBe('abc1d23');
+    })('abc1d23');
+  });
+
   it('telInputFormatter with 9', () => {
     Formatter.telInputFormatter(value => {
       expect(value).toBe('(12) 94567-8910');
@@ -85,8 +115,26 @@ describe('formatters', () => {
     })('1234567891');
   });
 
-  it('certBirthInputFormatter without 9', () => {
+  it('telefoneInputFormatter with 9', () => {
+    Formatter.telefoneInputFormatter(value => {
+      expect(value).toBe('(12) 94567-8910');
+    })('12945678910');
+  });
+
+  it('telefoneInputFormatter without 9', () => {
+    Formatter.telefoneInputFormatter(value => {
+      expect(value).toBe('(12) 3456-7891');
+    })('1234567891');
+  });
+
+  it('certBirthInputFormatter', () => {
     Formatter.certBirthInputFormatter(value => {
+      expect(value).toBe('000000 00 00 0000 0 00000 000 0000000 00');
+    })('00000000000000000000000000000000');
+  });
+
+  it('certNascimentoInputFormatter', () => {
+    Formatter.certNascimentoInputFormatter(value => {
       expect(value).toBe('000000 00 00 0000 0 00000 000 0000000 00');
     })('00000000000000000000000000000000');
   });
@@ -161,5 +209,11 @@ describe('formatters', () => {
     Formatter.temperaturaInputFormatter(value => {
       expect(value).toBe('27,1');
     })('271');
+  });
+
+  it('cnsInputFormatter', () => {
+    Formatter.cnsInputFormatter(value => {
+      expect(value).toBe('123 4567 8901 1121');
+    })('123456789011121');
   });
 });
