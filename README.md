@@ -54,26 +54,26 @@ function App() {
 
 ### Formatters
 
-| Padrão           | Formatter                      | Formato                                                              |
-| :--------------- | :----------------------------- | :------------------------------------------------------------------- |
-| Altura           | AlturaInputFormatter()         | 2,22                                                                 |
-| Cartão           | CartaoBancarioInputFormatter() | 0000 1111 2222 3333 4444                                             |
-| CEP              | CepInputFormatter()            | 99.999-999                                                           |
-| CPF              | CpfInputFormatter()            | 999.999.99-99                                                        |
-| CNPJ             | CnpjInputFormatter()           | 99.999.999/9999-99                                                   |
-| CPF / CNPJ       | CpfOuCnpjFormatter()           | se adapta conforme os números são inseridos                          |
-| CEST             | CESTInputFormatter()           | 12.345.67                                                            |
-| CNS              | CNSInputFormatter()            | 111 2222 3333 4444                                                   |
-| Data             | DataInputFormatter()           | 01/01/1900                                                           |
-| Hora             | HoraInputFormatter()           | 23:59                                                                |
-| KM               | KmInputFormatter()             | 999.999                                                              |
-| Cert. nascimento | CertNascimentoInputFormatter() | 000000 11 22 3333 4 55555 666 7777777 88                             |
-| Peso             | PesoInputFormatter()           | 111,1                                                                |
-| Placa            | PlacaVeiculoInputFormatter()   | AAA-1234 (**não** utilizar `FilteringTextInputFormatter.digitsOnly`) |
-| Real             | RealInputFormatter()           | 20.550                                                               |
-| Telefone         | TelefoneInputFormatter()       | (99) 9999-9999                                                       |
-| Validade cartão  | ValidadeCartaoInputFormatter() | 12/24 ou 12/2024                                                     |
-| Temperatura      | TemperaturaInputFormatter()    | 27,1                                                                 |
+| Padrão           | Formatter                      | Formato                                     |
+| :--------------- | :----------------------------- | :------------------------------------------ |
+| Altura           | alturaInputFormatter()         | 2,22                                        |
+| Cartão           | cartaoBancarioInputFormatter() | 0000 1111 2222 3333 4444                    |
+| CEP              | cepInputFormatter()            | 99.999-999                                  |
+| CPF              | cpfInputFormatter()            | 999.999.99-99                               |
+| CNPJ             | cnpjInputFormatter()           | 99.999.999/9999-99                          |
+| CPF / CNPJ       | cpfOuCnpjInputFormatter()      | se adapta conforme os números são inseridos |
+| CEST             | cestInputFormatter()           | 12.345.67                                   |
+| CNS              | cnsInputFormatter()            | 111 2222 3333 4444                          |
+| Data             | dataInputFormatter()           | 01/01/1900                                  |
+| Hora             | horaInputFormatter()           | 23:59                                       |
+| KM               | kmInputFormatter()             | 999.999                                     |
+| Cert. nascimento | certNascimentoInputFormatter() | 000000 11 22 3333 4 55555 666 7777777 88    |
+| Peso             | pesoInputFormatter()           | 111,1                                       |
+| Placa            | placaVeiculoInputFormatter()   | AAA-1234                                    |
+| Real             | realInputFormatter()           | 20.550                                      |
+| Telefone         | telefoneInputFormatter()       | (99) 9999-9999                              |
+| Validade cartão  | validadeCartaoInputFormatter() | 12/24 ou 12/2024                            |
+| Temperatura      | temperaturaInputFormatter()    | 27,1                                        |
 
 ### Modelos
 
@@ -111,7 +111,7 @@ Métodos que facilitam manipular valores:
 - `UtilBrasilFields.removeCaracteres` (remove caracteres especiais)
 - `UtilBrasilFields.removerSimboloMoeda` (remove o R\$)
 - `UtilBrasilFields.converterMoedaParaNumber` (remove o R\$ e retorna um number)
-- `UtilBrasilFields.isCPFValido`
-- `UtilBrasilFields.isCNPJValido`
+- `UtilBrasilFields.isCPFValido()`
+- `UtilBrasilFields.isCNPJValido()`
 
 ---
