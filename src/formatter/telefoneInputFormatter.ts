@@ -1,11 +1,7 @@
 import { obterTelefone } from '../utilBrasilFields/obterTelefone';
 import { handleInputValue } from './utils/handleInputValue';
 
-/**
- * @deprecated
- * use telefoneInputFormatter()
- */
-export function telInputFormatter(callback: (value: string) => void) {
+export function telefoneInputFormatter(callback: (value: string) => void) {
   return (value: any) => {
     try {
       const handledValue = handleInputValue(value);

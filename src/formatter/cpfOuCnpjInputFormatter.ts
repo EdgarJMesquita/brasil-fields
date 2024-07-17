@@ -2,11 +2,7 @@ import { MaskType } from './constants/maskType';
 import { handleInputValue } from './utils/handleInputValue';
 import { mask } from './utils/mask';
 
-/**
- * @deprecated
- * use cpfOuCnpjInputFormatter()
- */
-export function cpfOrCnpjInputFormatter(callback: (value: string) => void) {
+export function cpfOuCnpjInputFormatter(callback: (value: string) => void) {
   return (value: any) => {
     try {
       const handledValue = handleInputValue(value);

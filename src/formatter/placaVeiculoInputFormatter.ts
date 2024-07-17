@@ -2,11 +2,7 @@ import { MaskType } from './constants/maskType';
 import { handleInputValue } from './utils/handleInputValue';
 import { mask } from './utils/mask';
 
-/**
- * @deprecated
- * use placaVeiculoInputFormatter()
- */
-export function plateInputFormatter(callback: (value: string) => void) {
+export function placaVeiculoInputFormatter(callback: (value: string) => void) {
   return (value: string) => {
     try {
       const handledValue = handleInputValue(value);
